@@ -1,0 +1,509 @@
+<div class="theme-font-montserrat theme-color-white-blue" style="width: 100%; height: 100%;">
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 253px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 11;">
+                        <h1>Real World React Debugging</h1>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 471px;">
+                    <div class="sl-block-content" style="z-index: 12;">
+                        <p>Jared Forsyth</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 313px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>[aside]</h2>
+                        <p>Helping women feel comfortable in the React community</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 12; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 253px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h1>A lack of diversity impoverishes us all.</h1>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 12; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 640px; height: 441.379px; left: 160px; top: 119px;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <img style="" data-natural-width="1305" data-natural-height="900" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/558855/images/2935488/pasted-from-clipboard.png"/>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 12; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 814px; left: 73px; top: 210px; height: auto;">
+                    <div class="sl-block-content fragment" data-has-line-height="" style="line-height: 1.69; z-index: 10;" data-fragment-index="0">
+                        <p>
+                            <span style="font-size:1.4em">"stop being sexist" isn't enough</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 802px; left: 78px; top: 334px;">
+                    <div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="1">
+                        <p>
+                            <span style="font-size:1.4em">we have to be 
+                                <em>actively uncomfortable</em>
+                            </span>
+                        </p>
+                        <p>
+                            <span style="font-size:1.4em">with the disparity</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 11;">
+                        <h2>What can I do?</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 560px; left: 200px; top: 177px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.95; z-index: 12;">
+                        <ul>
+                            <li style="font-size:42px" class="fragment" data-fragment-index="0">fight bias</li>
+                            <li style="font-size:42px" class="fragment" data-fragment-index="1">signal-boost women making awesome things</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 554px; left: 203px; top: 615px;">
+                    <div class="sl-block-content fragment" style="z-index: 13; color: rgb(0, 0, 255); font-size: 56%;" data-fragment-index="2">
+                        <p>https://twitter.com/jaredforsyth/status/766685711235895296</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 14; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 480px; height: 147.597px; left: 240px; top: 451px;">
+                    <div class="sl-block-content fragment" style="z-index: 15;" data-fragment-index="2">
+                        <img data-natural-width="774" data-natural-height="238" style="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/558855/images/2941064/pasted-from-clipboard.png"/>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="font-size: 200%; text-align: left; z-index: 10;">
+                        <h2>Fix Bugs</h2>
+                        <h2>Find Bugs</h2>
+                        <h2>Prevent Bugs</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 12; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 136px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>FatigueFighter™</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">🎉 Minimal hassle</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">🔧Some hassle</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">🛠 Large hassle</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 58px; height: auto;">
+                    <div class="sl-block-content" style="font-size: 200%; text-align: left; z-index: 10;">
+                        <h1>Fix bugs</h1>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 12; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>React Devtools</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 79px; top: 210px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">Chrome / Firefox 🎉</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">React Native 
+                                    <span style="text-align:left">🔧</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">Electron 🔧</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">Embedded</span>&nbsp;
+                                <span style="font-size:1.4em">Webview 🔧</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">Mobile Browser 🔧</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>Questions React Devtools can help answer</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>Questions React Devtools can help answer</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11; text-align: left;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">What component is broken?</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h3>What component is broken?</h3>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>Questions React Devtools can help answer</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11; text-align: left;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">What component is broken?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">How is this codebase even organized?</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h3>How is the codebase organized?</h3>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>Questions React Devtools can help answer</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11; text-align: left;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">What component is broken?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">How is this codebase even organized?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">What's happening with the data?</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h3>
+                            <span>What's happening with the data?</span>
+                        </h3>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>Questions React Devtools can help answer</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11; text-align: left;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">What component is broken?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">How is this codebase even organized?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:42px">What's happening with the data?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:42px">Why is this slow?</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h3>Why is this slow?</h3>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;" dir="ui">
+                        <h2>Questions React Devtools can help answer</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11; text-align: left;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">What component is broken?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">How is this codebase even organized?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">What's happening with the data?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:42px">Why is this slow?</span>
+                            </li>
+                            <li>
+                                <span style="font-size:42px">Where's this defined? 🔧</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h3>Where is this defined?</h3>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>What does it look like when...</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 240px;">
+                    <div class="sl-block-content" style="z-index: 12; text-align: left; font-size: 125%; line-height: 1.95;" data-has-line-height="">
+                        <ul>
+                            <li>an exception occurs in a lifecycle method?</li>
+                            <li>a component returns something invalid?</li>
+                            <li>a JSX references an invalid component?</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 900px; left: 30px; top: 58px; height: auto;">
+                    <div class="sl-block-content" style="font-size: 200%; text-align: left; z-index: 10;">
+                        <h1>Find bugs</h1>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 12; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h2>Lint all the things 🎉🔧🛠</h2>
+                        <p>with eslint</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
+                        <ul>
+                            <li style="font-size: 42px; line-height: 70.98px;">no-undef, no-dupe-keys 🎉</li>
+                            <li style="font-size: 42px; line-height: 70.98px;">
+                                <span style="font-size:42px; line-height:70.98px">react/jsx-no-undef 🎉</span>
+                            </li>
+                            <li style="font-size: 42px; line-height: 70.98px;">react/jsx-no-duplicate-props 🎉</li>
+                            <li style="font-size: 42px; line-height: 70.98px;">
+                                <span style="font-size:42px; line-height:70.98px">react/prop-types 🔧</span>
+                            </li>
+                            <li style="font-size: 42px; line-height: 70.98px;">react/forbid-prop-types 🛠</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>Automated Testing</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 195px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">Testing! 🛠</span>
+                                <ul>
+                                    <li>
+                                        <span style="font-size:1.4em">Visual regression 🛠</span>
+                                    </li>
+                                    <li>
+                                        <span style="font-size:42px">Snapshots 🔧</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">Fixtures (more testing?) 🛠</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">React Sandbox 🔧</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">React Storybook 🔧</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 10;">
+                        <h2>Prevent Bugs</h2>
+                        <p>with GoodPractices and more tooling</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">Responsible state management 🎉</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">Decouple logic from presentation 🎉</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">Redux 🛠</span>
+                            </li>
+                            <li>
+                                <span style="font-size:1.4em">FlowType 🛠</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;">
+                    <div class="sl-block-content" style="z-index: 13; color: rgb(102, 102, 102);">
+                        <p style="text-align: right;">@jaredforsyth</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

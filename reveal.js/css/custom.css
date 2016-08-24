@@ -1,0 +1,20 @@
+
+aside.notes {
+    white-space: pre;
+    font-size: 10px;
+}
+
+div.sl-block.twitter {
+    height: auto;
+    min-width: 30px;
+    min-height: 30px;
+    width: 240px;
+    left: 720px;
+    top: 661px;
+    text-align: right;
+    z-index: 12;
+    color: rgb(102, 102, 102);
+}
+
+section {
+}
