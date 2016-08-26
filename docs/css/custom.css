@@ -15,6 +15,7 @@ div.sl-block.twitter {
     z-index: 12;
     font-size: 80%;
     color: rgb(102, 102, 102);
+    z-index: 1000;
 }
 
 section {
