@@ -27,18 +27,21 @@
       <div class="theme-font-montserrat theme-color-white-blue" style="width: 100%; height: 100%;">
     <div class="reveal">
         <div class="slides">
+
+
+
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 253px; height: auto;">
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 203px; height: auto;">
                     <div class="sl-block-content" style="z-index: 11;">
                         <h1>Real World React Debugging</h1>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 471px;">
+                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 421px;">
                     <div class="sl-block-content" style="z-index: 12;">
                         <p>Jared Forsyth</p>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 96px; height: 96px; left: 432px; top: 520px;">
+                <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 96px; height: 96px; left: 432px; top: 480px;">
                     <div class="sl-block-content" style="z-index: 14; border-style: solid; border-radius: 110px;">
                         <img data-natural-width="400" data-natural-height="400" style="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/558855/images/2941132/pasted-from-clipboard.png"/>
                     </div>
@@ -52,37 +55,32 @@
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
 Hi! I'm a mobile and web developer at Khan Academy, where we're working to bring a world-class education to anyone anywhere.
+Last summer I interned at Facebook, where I rebuilt the React devtools extension, adding a bunch of features and bringing it to more platforms.
+
 and I'm gonna talk about debugging with react
 </aside>
             </section>
-
 
 
 <!-- *************************** WOMEN *************************** -->
 
 
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 313px; height: auto;">
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 213px; height: auto;">
                     <div class="sl-block-content" style="z-index: 10;">
                         <h2>[aside]</h2>
                         <p>Helping women feel comfortable in the React community</p>
                     </div>
                 </div>
-                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
-                <aside class="notes">
-Before I start, though, I want to take a minute to talk about the React community.
-If you look around here, and at React meetups, etc. you'll see a ton more men than women. And I'm gonna make an assertion: "A lack of diversity impoverishes us all"
-</aside>
-            </section>
-
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 253px; height: auto;">
-                    <div class="sl-block-content" style="z-index: 10;">
-                        <h1>A lack of diversity impoverishes us all.</h1>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 403px; height: auto;">
+                    <div class="sl-block-content fragment" data-fragment-index="0" style="z-index: 10;">
+                        <h3>A lack of diversity impoverishes us all.</h3>
                     </div>
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
+Before I start, though, I want to take a minute to talk about the React community.
+If you look around here, and at React meetups, etc. you'll see a ton more men than women. And I'm just gonna make the assertion: "A lack of diversity impoverishes us all"
 and right now I'm just doing to talk about the disparity between men and women -- there are lots of kinds of diversity that are important.
 
 So what can we do about this? Well here's a tweet from Safia from a couple of weeks ago that I've been thinking a lot about.
@@ -97,7 +95,7 @@ So what can we do about this? Well here's a tweet from Safia from a couple of we
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-Safia's an awesome developer, doing some cool things with React over at the @nteract project, she speaks at conferences...
+Safia's an awesome developer, doing cool things with React over at the @nteract project, she speaks at conferences...
 And this is what she has to put up with.
 
 So we can start with blatant sexism &amp; misogyny.
@@ -181,10 +179,6 @@ I asked this on twitter the other day &amp; got a ton of great responses -- if y
 </aside>
             </section>
 
-
-
-
-
 <!-- *************************** INTRO *************************** -->
 
             <section>
@@ -197,10 +191,14 @@ I asked this on twitter the other day &amp; got a ton of great responses -- if y
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-so now I'm going to talk about how to fix bugs, how to find bugs, and how to prevent bugs in your react applications.
+we all write bugs, and we wish we didn't.
+So I'm going to talk about how to avoid writing bugs in the first place, how to catch the bugs you do write, and then how to fix the bugs you find.
 
 And I'm going to be talking about a lot of different tools, techniques, best practices. but I want to make it clear that these things all have their tradeoffs. some have really cool benefits, but if you're just on a small team, or starting a side project, the associated hassle won't be worth it. so I've come up with this scale for you to make that clear
-</aside>
+
+// if you spend a lot of time writing code, and you're like me, then you also spend a lot of time writing bugs.
+// we all probably spend a fair amount of time writing bugs, with some working code mixed in with it.
+								</aside>
             </section>
 
             <section>
@@ -216,7 +214,7 @@ And I'm going to be talking about a lot of different tools, techniques, best pra
                                 <span style="font-size:1.4em">🎉 Minimal hassle</span>
                             </li>
                             <li>
-                                <span style="font-size:1.4em">🔧Some hassle</span>
+                                <span style="font-size:1.4em">🔧 Some hassle</span>
                             </li>
                             <li>
                                 <span style="font-size:1.4em">🛠 Large hassle</span>
@@ -243,13 +241,10 @@ these are definitely just guidelines, but hopefully it will give you an idea of 
                     <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69; z-index: 11;">
                         <ul>
                             <li>
-                                <span style="font-size:1.4em">Responsible data management 🎉</span>
+                                <span style="font-size:1.4em">State management 🎉</span>
                             </li>
                             <li>
-                                <span style="font-size:1.4em">Decouple logic from presentation 🎉</span>
-                            </li>
-                            <li>
-                                <span style="font-size:1.4em">Redux 🛠</span>
+                                <span style="font-size:1.4em">Logic // presentation 🎉</span>
                             </li>
                             <li>
                                 <span style="font-size:1.4em">FlowType 🛠</span>
@@ -259,91 +254,187 @@ these are definitely just guidelines, but hopefully it will give you an idea of 
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
 								<aside class="notes">
-A lot of bugs that I've seen arise from having a codebase that's difficult to understand.
-And the handling of data, especially as it changes over time, is a huge source of complexity.
+So first off, wouldn't it be cool if we stopped writing bugs in the first place?
+There are lots of different kinds of bugs, but the class of bugs that I'm going to talk about now is those that stem from having a codebase that's difficult to understand &amp; maintain.
 								</aside>
             </section>
 
+
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content">
-                        <h2>Responsible data management</h2>
-                    </div>
-                </div>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
-                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
-                        <ul>
-                            <li class="fragment" data-fragment-index="0">
-																props == don't have to worry about mutation in this component
-                            </li>
-                            <li class="fragment" data-fragment-index="1">
-                                state == mutation of this data is limited to this component
-                            </li>
-                            <li class="fragment" data-fragment-index="2">
-                                instance variables == this data doesn't impact the render method
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+								<div class="sl-block" data-block-type="text"
+								style="width: 600px; left: 180px; top: 200px; height: auto;color: #555; font-style: italic;">
+								    <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+								        <h3>"Figuring out where state should live is one of the hard problems of UI"</h3>
+												<h4>- me</h4>
+								    </div>
+								</div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-Now React gives us a leg up here, because it gives us a vocabulary to talk about different kinds of data, and ownership norms about that data.
+So, feel free to argue with me on this, but I've seen this come up again and again in the apps I've worked on, whether in React, Angular, Swift, anywhere.
 
-These conventions give us shortcuts -- we can look at a component, at the props &amp; the state, and have at least a high level understanding of who owns what, and how different pieces of data are expected to relate to each other &amp; influence the output of the component.
+Now, React gives us a leg up here, because it gives us a vocabulary to talk about different kinds of data, and ownership norms about that data. Other frameworks don't even give us that much.
+
+But we still have a question, "what component should own this state?"
 </aside>
             </section>
 
+
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content">
-                        <h2>Decouple logic from presentation</h2>
-                    </div>
-                </div>
-                <!--div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
-                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
-                        <ul style="font-size:1.4em">
-                            <li class="fragment" data-fragment-index="0">
-																props == don't have to worry about mutation in this component
-                            </li>
-                            <li class="fragment" data-fragment-index="1">
-                                state == mutation of this data is limited to this component
-                            </li>
-                            <li class="fragment" data-fragment-index="2">
-                                instance variables == this data doesn't impact the render method
-                            </li>
-                        </ul>
-                    </div>
-                </div-->
+							<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="91b4c6afd9ea46d5f3d8b4a0ab2e68e7">
+    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+        <h2>State Management</h2>
+    </div>
+</div>
+<div class="sl-block" data-block-type="text" style="width: 565px; left: 198px; top: 179px; height: auto;" data-block-id="96ad0a4771df96fce6c10677c2ccb324">
+    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" data-has-line-height="" style="line-height: 1.69; z-index: 11; font-size: 120%;">
+        <ul>
+            <li>
+                <span style="font-size:1.0em">One owner</span>
+            </li>
+            <li>
+                <span style="font-size:1.0em">Least Common Ancestor</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="sl-block" data-block-type="code" data-block-id="070b4080afc3d357c02522b29a3a2b05" style="min-width: 30px; min-height: 30px; width: 668px; height: 252px; left: 150px; top: 370px;">
+    <div class="sl-block-content fragment" style="z-index: 14; font-size: 110%;" data-fragment-index="1">
+        <pre class="javascript">
+            <code>  handleClick() {
+    this.setState({clicked: true});
+  },
+  render() {
+    return &lt;div style={...}&gt;
+      &lt;button onClick={this.handleClick}&gt;
+        click me
+      &lt;/button&gt;
+    &lt;/div&gt;
+  }
+</code></pre>
+    </div>
+</div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 661px; height: 232px; left: 150px; top: 370px;" data-block-id="bd732e981a52da9ac81958d9f9d1aa33">
+    <div class="sl-block-content fragment" style="z-index: 17; font-size: 180%;" data-fragment-index="3">
+        <pre class="javascript">
+            <code>  ...
+  handleClick() {
+    this.setState({clicked: true});
+    this.props.onClick();
+  },
+  ...</code></pre>
+    </div>
+</div>
+<div class="sl-block" data-block-type="image" data-block-id="6d38a71c323e41221d375814117f8656" style="min-width: 30px; min-height: 30px; width: 385px; height: 148.077px; left: 288px; top: 419px;">
+    <div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0">
+        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/558855/images/2945090/click2.gif" data-natural-width="468" data-natural-height="180" style=""/>
+    </div>
+</div>
+<div class="sl-block" data-block-type="image" data-block-id="a0a718ce030bbe1eb37205408ad3e1e2" style="min-width: 30px; min-height: 30px; width: 360px; height: 140.87px; left: 300px; top: 430px;">
+    <div class="sl-block-content fragment" style="z-index: 15;" data-fragment-index="2">
+        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/558855/images/2945091/count2.gif" data-natural-width="460" data-natural-height="180" style=""/>
+    </div>
+</div>
+<div class="sl-block" data-block-type="shape" data-block-id="24ee183c72b6996185a89a890c135176" style="min-width: 4px; min-height: 4px; width: 300px; height: 300px; left: 330px; top: 357px;">
+    <div class="sl-block-content fragment" data-shape-type="symbol-denied" data-shape-fill-color="rgb(255, 0, 0)" data-shape-stretch="true" style="z-index: 18;" data-fragment-index="4">
+        <svg
+            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 32 32">
+            <g class="shape-element" fill="rgb(255, 0, 0)">
+                <path d="M16 0c-8.836 0-16 7.164-16 16s7.164 16 16 16 16-7.164 16-16-7.164-16-16-16zM16 4c2.59 0 4.973 0.844 6.934 2.242l-16.696 16.688c-1.398-1.961-2.238-4.344-2.238-6.93 0-6.617 5.383-12 12-12zM16 28c-2.59 0-4.973-0.844-6.934-2.242l16.696-16.688c1.398 1.961 2.238 4.344 2.238 6.93 0 6.617-5.383 12-12 12z"></path>
+            </g>
+        </svg>
+    </div>
+</div>
+
+<div class="sl-block" data-block-type="text" style="background-color: white; min-width: 30px; min-height: 30px; width: 661px; height: 320px; left: 150px; top: 350px;" data-block-id="bd732e981a52da9ac81958d9f9d1aa33">
+    <div class="sl-block-content fragment" style="z-index: 100; font-size: 180%; background-color: white;" data-fragment-index="5">
+			<h4>If a parent needs to know about it, the parent should own it.
+    </div>
+</div>
+
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-									TODO
+I'll start out by talking about single ownership and least common ancestor.
+
+So here's an example of a red flag I came across recently, but I've simplified it a lot so the code fits on a slide.
+So here's this component, where I click the button, and this background color changes to green. And we know how to do this, the code is pretty simple.
+
+But then a few weeks later I come along, or some other developer comes along, now with a new requirement. This parent node wants to keep track of the number of times the button is clicked.
+So basically, the parent needs to know about some state that the child has. We know how to do this! Just add a prop &amp; call it here!
 								</aside>
             </section>
 
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content">
-                        <h2>Redux</h2>
-                    </div>
-                </div>
-                <!--div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
-                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
-                        <ul style="font-size:1.4em">
-                            <li class="fragment" data-fragment-index="0">
-																props == don't have to worry about mutation in this component
-                            </li>
-                            <li class="fragment" data-fragment-index="1">
-                                state == mutation of this data is limited to this component
-                            </li>
-                            <li class="fragment" data-fragment-index="2">
-                                instance variables == this data doesn't impact the render method
-                            </li>
-                        </ul>
-                    </div>
-                </div-->
+								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="56691312e99cb169acbe037f863a996e">
+								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+								        <h2>State Management</h2>
+								    </div>
+								</div>
+								<div class="sl-block" data-block-type="text" style="width: 565px; left: 198px; top: 179px; height: auto;" data-block-id="7192cb7e7e687ca728509c99941d36be">
+								    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" data-has-line-height="" style="line-height: 1.69; z-index: 11; font-size: 120%;">
+								        <ul>
+								            <li>
+								                <span style="font-size:1.0em">One owner</span>
+								            </li>
+								            <li>
+								                <span style="font-size:1.0em">Least Common Ancestor</span>
+								            </li>
+								            <li>
+								                <span style="font-size:1.0em">Embrace the tree</span>
+								            </li>
+								        </ul>
+								    </div>
+								</div>
+								<div class="sl-block" data-block-type="code" style="width: 800px; height: 236px; left: 80px; top: 411px;" data-block-id="597452699b6ca60e893ec89f7136f086">
+								    <div class="sl-block-content" style="z-index: 12; font-size: 180%;">
+								        <pre class="javascript">
+								            <code>  ...
+  getClickedState() {
+    return this.refs.child.hasBeenClicked();
+  },
+  ...</code></pre>
+								    </div>
+								</div>
+								<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 300px; height: 300px; left: 331px; top: 379px;" data-block-id="3a79e03d9e1ba7c98eb2bc905e2d7a9c">
+								    <div class="sl-block-content fragment" data-shape-type="symbol-denied" data-shape-fill-color="rgb(255, 0, 0)" data-shape-stretch="true" style="z-index: 14;" data-fragment-index="0">
+								        <svg
+								            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 32 32">
+								            <g class="shape-element" fill="rgb(255, 0, 0)">
+								                <path d="M16 0c-8.836 0-16 7.164-16 16s7.164 16 16 16 16-7.164 16-16-7.164-16-16-16zM16 4c2.59 0 4.973 0.844 6.934 2.242l-16.696 16.688c-1.398-1.961-2.238-4.344-2.238-6.93 0-6.617 5.383-12 12-12zM16 28c-2.59 0-4.973-0.844-6.934-2.242l16.696-16.688c1.398 1.961 2.238 4.344 2.238 6.93 0 6.617-5.383 12-12 12z"></path>
+								            </g>
+								        </svg>
+								    </div>
+								</div>
+
+<div class="sl-block" data-block-type="text" style="background-color: white; min-width: 30px; min-height: 30px; width: 801px; height: 420px; left: 80px; top: 350px;">
+    <div class="sl-block-content fragment" style="z-index: 100; padding-top: 50px; font-size: 180%; background-color: white;" data-fragment-index="1">
+			<h4>If a parent needs to know about it, the parent should own it.
+    </div>
+</div>
+
+                <div class="sl-block twitter" data-block-type="text" style="z-index: 1000">@jaredforsyth</div>
+                <aside class="notes">
+Here's another example of this same issue, which I saw in some code a few months ago, where a parent is reaching into a child to get some state that the child owns.
+Big red flag.
+								</aside>
+            </section>
+
+            <section>
+								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="ba822a7531b24d61b62c10b9b7d1d7bc">
+								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" dir="ui" style="z-index: 11;">
+								        <h2>Decouple logic from presentation</h2>
+								    </div>
+								</div>
+								<div class="sl-block" data-block-type="image" data-block-id="b9d5116476cec82b273e4af14342ef88" style="min-width: 30px; min-height: 30px; width: 640px; height: 431.515px; left: 160px; top: 244px;">
+								    <div class="sl-block-content" style="z-index: 13;">
+								        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/558855/images/2944734/pasted-from-clipboard.png" style="" data-natural-width="660" data-natural-height="445"/>
+								    </div>
+								</div>
+
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
 									TODO
+> show example of complex logic in a react class method
+> NOPE move it out, make it testable.
 								</aside>
             </section>
 
@@ -371,7 +462,9 @@ These conventions give us shortcuts -- we can look at a component, at the props 
                 </div-->
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-									TODO
+The last thing I want to talk about is using Flow, and I won't say much other than the fact that we've started using it at KA, and the biggest benefit that we've seen is that it improves readability of the codebase --- have you ever looked at a function that takes some blob, gets some attribute out of it, and wondered, "I wonder what that blob is shaped like?"
+Or even more frightening, trying to refactor that blob to remove some attribute, and hoping despreately that you've found all the code that's expecting the blob to be shaped like that.
+
 								</aside>
             </section>
 
@@ -401,7 +494,65 @@ Here are a couple of reasons why it might be"
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
                     <div class="sl-block-content">
                         <h2>Catching bugs</h2>
-                        <p>is it worth it?</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
+                        <ul>
+                            <li class="fragment" data-fragment-index="0">
+                                <span style="font-size:1.4em">your users 🎉</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+<div class="sl-block fragment" data-fragment-index="1" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 640px; height: 288.118px; left: 160px; top: 210px;">
+    <div class="sl-block-content" style="z-index: 13;">
+        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/558855/images/2944270/pasted-from-clipboard.png" style="" data-natural-width="813" data-natural-height="366"/>
+    </div>
+</div>
+
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+                <aside class="notes">
+Of course, we all know how to catch bugs. You just push to production, and your users will tell you!
+twitter's great for that
+</aside>
+            </section>
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h2>Catching bugs</h2>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
+                        <ul>
+                            <li>
+                                <span style="font-size:1.4em">your users 🎉 🙃</span>
+                            </li>
+                            <li class="fragment" data-fragment-index="0">
+                                <span style="font-size:1.4em">linting 🔧🛠</span>
+                            </li>
+                            <li class="fragment" data-fragment-index="1">
+                                <span style="font-size:1.4em">testing 🛠🛠</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+                <aside class="notes">
+So that's not actually sustainable --
+</aside>
+            </section>
+
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h2>Is it worth it?</h2>
+                        <p>🙃 Our users are great 🙃</p>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
@@ -414,7 +565,7 @@ Here are a couple of reasons why it might be"
                                 <span style="font-size:1.4em">you expect to support this code for at least several months</span>
                             </li>
                             <li class="fragment" data-fragment-index="2">
-                                <span style="font-size:1.4em">you have lots of production users</span>
+                                <span style="font-size:1.4em">you have lots of production users that you care about</span>
                             </li>
                         </ul>
                     </div>
@@ -428,14 +579,93 @@ Or if you've got lots of production users &amp; you'd really rather not they see
             </section>
 
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 250px; height: auto;">
-                    <div class="sl-block-content">
-                        <h2>Lint all the things 🎉🔧🛠</h2>
-                        <p>with eslint</p>
-                    </div>
-                </div>
+								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+								        <h2>Lint all the things 🎉🔧🛠</h2>
+								        <p>with eslint</p>
+								    </div>
+								</div>
+
+								<div class="sl-block fragment" data-fragment-index="0" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 490px; left: 160px; top: 210px;">
+								    <div class="sl-block-content" style="z-index: 12; font-size: 50%;">
+								        <pre class="javascript">
+								            <code>{
+    "rules": {
+        // ---------------------------------------
+        // ES6 and jsx rules.
+        "arrow-spacing": 2,
+        "computed-property-spacing": 2,
+        "constructor-super": 2,
+        "no-const-assign": 2,
+        "no-this-before-super": 2,
+        "no-var": 2,
+        "prefer-const": 2,
+        "prefer-spread": 2,
+        "react/forbid-prop-types": [2, { "forbid": [ "array", "object" ] }],
+        "react/jsx-closing-bracket-location": [2, "line-aligned"],
+        "react/jsx-curly-spacing": [2, "never"],
+        "react/jsx-indent-props": 2,
+        "react/jsx-no-duplicate-props": 2,
+        // This triggers a ton on stuff like 'if (window.x) { x(...) }'.
+        "react/jsx-no-undef": 2,
+        "react/jsx-sort-prop-types": 2,
+        "react/jsx-uses-react": 2,
+        // (Maybe we can be more strict and not need allow-in-func?)
+        "react/no-did-mount-set-state": [2, "allow-in-func"],
+        "react/no-did-update-set-state": 2,
+        "react/no-direct-mutation-state": 2,
+        "react/prop-types": 2,
+        "react/self-closing-comp": 2,
+        "react/sort-comp": 2,
+        // TODO(riley): Introduce this rule once we upgrade to &gt;= 2.0.0.
+        // "template-curly-spacing": 2,
+        // ---------------------------------------
+        // ES6/jsx stuff we explicitly disable.
+        // We turned this off since it was too much work for too
+        // little benefit, especially for one-line props.
+        "react/jsx-sort-props": 0,
+        // We turned this off because it complains when you have a
+        // multi-line string, which I think is going too far.
+        "prefer-template": 0,
+        // We've decided explicitly not to care about this.
+        "arrow-parens": 0,
+        // ---------------------------------------
+        // ES6/jsx stuff that's disabled for now, but maybe shouldn't be.
+        // TODO(csilvers): enable these if/when community agrees on it.
+        "prefer-arrow-callback": 0
+    },
+    "ecmaFeatures": {
+        "arrowFunctions": true,
+        "blockBindings": true,
+        "classes": true,
+        "destructuring": true,
+        "experimentalObjectRestSpread": true,
+        "forOf": true,
+        "jsx": true,
+        "restParams": true,
+        "spread": true,
+        "templateStrings": true
+    },
+    "plugins": [
+        "react"
+    ],
+    "env": {
+        // TODO(csilvers): once we properly use eslintrc.node for node
+        // files, get rid of this next line.
+        "node": true,
+        "browser": true,
+        "es6": true
+    },
+    "extends": "./eslintrc.shared"
+}
+</code></pre>
+    </div>
+</div>
+
                 <aside class="notes">
 Linting should be your first line of defense in catching bugs. It's the simplest to setup, the easiest to maintain, and it tends to be fast and shouldn't get in your way too much.
+
+This is our lint config
 </aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
             </section>
@@ -459,6 +689,91 @@ Linting should be your first line of defense in catching bugs. It's the simplest
                 <aside class="notes">
 These first 3 eslint style rules are for catching simple mistakes, there's no question about it being "wrong", it's just nice that the linter has your back.
 They'll warn you if you misspelled a variable, forgot to import a component, or passed in the same prop twice.
+</aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+
+            <section>
+							<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="eb17a8a631d47c54d504476241607fbb">
+							    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+							        <h2>no-undef 🎉</h2>
+							        <p>Catching simple mistakes</p>
+							    </div>
+							</div>
+							<div class="sl-block" data-block-type="code" style="width: 800px; height: 219px; left: 80px; top: 247px;" data-block-id="1f564b43721126f2d228264206e7c1ae">
+							    <div class="sl-block-content" style="z-index: 12; font-size: 150%;">
+							        <pre class="javascript">
+							            <code>import React from 'react'
+
+const NoUndef = React.createClass({
+  render() {
+    return &lt;Component /&gt; // Oops, forgot to import!
+  }
+})</code></pre>
+								    </div>
+								</div>
+                <aside class="notes">
+									Here we forgot to import a child component, so it's undefined -- the no-undef rule will catch this
+</aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+
+            <section>
+							<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="eb17a8a631d47c54d504476241607fbb">
+							    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+							        <h2>no-duplicate-props 🎉</h2>
+							        <p>Catching simple mistakes</p>
+							    </div>
+							</div>
+							<div class="sl-block" data-block-type="code" style="width: 800px; height: 274px; left: 80px; top: 247px;" data-block-id="922da2fb9ed4040ffe68fb79ddfd414d">
+							    <div class="sl-block-content" style="z-index: 11; font-size: 150%;">
+							        <pre class="javascript">
+							            <code>  &lt;SomeComponent
+    height={200}
+    items={theItems}
+    width={500}
+    profileUrl={this.props.profileUrl}
+    showHeader={false}
+    items={null}
+    responsive={this.props.flags.responsive}
+  /&gt; </code></pre>
+							    </div>
+							</div>
+							<div class="sl-block" data-block-type="line" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 0px; top: 350px;">
+							    <div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0">
+
+							        <svg
+							            xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="156" height="1"
+													style="position: absolute; left: 0px; top: 0px; height: 50px"
+													viewBox="0 0 100 50"
+											>
+												<g transform="translate(0, 10)">
+							            <line stroke="#ff0000" stroke-width="10" x1="100" y1="0" x2="0" y2="0"></line>
+							            <path style="fill: rgba(0,0,0,0);" stroke="#ff0000" stroke-width="10"
+													transform="translate(100, 0) rotate(90)" d="M 22.5 22.5 L 0 0 L -22.5 22.5"></path>
+												</g>
+							        </svg>
+
+							        <svg
+							            xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="156" height="1"
+													style="position: absolute; left: 0px; top: 115px; height: 50px"
+													viewBox="0 0 100 50"
+											>
+												<g transform="translate(0, 10)">
+							            <line stroke="#ff0000" stroke-width="10" x1="100" y1="0" x2="0" y2="0"></line>
+							            <path style="fill: rgba(0,0,0,0);" stroke="#ff0000" stroke-width="10"
+													transform="translate(100, 0) rotate(90)" d="M 22.5 22.5 L 0 0 L -22.5 22.5"></path>
+												</g>
+							        </svg>
+
+							    </div>
+							</div>
+
+                <aside class="notes">
+Can you spot the bug? At some point I cam through and added an "items" prop, but there already was one there.
+And this has literally happened to me in real life - and then I come in and make changes to the first instance, and I refresh, and nothing changes, and there's that critical moment of "am I going crazy?"
 </aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
             </section>
@@ -553,6 +868,22 @@ Here's a screen that I've been working on a lot recently -- it's what you see if
 Let's focus on this little widget down here -- the progress indicator. Now you wouldn't know to look at it, but there are a ton of possible different states that this widget can be in, visually, depending on the props.
 							</aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+						</section>
+
+						<section>
+								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="c44d344d5c713d5785410bae8c1fe199">
+								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+								        <h2>Fixtures 🛠</h2>
+								    </div>
+								</div>
+								<div class="sl-block" data-block-type="image" data-block-id="df69a0d472a83e9877b228d13f2d9c55" style="min-width: 30px; min-height: 30px; width: 480px; height: 699.574px; left: 240px; top: 74px;">
+								    <div class="sl-block-content" style="z-index: 12;">
+								        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/558855/images/2944955/pasted-from-clipboard.png" style="" data-natural-width="564" data-natural-height="822"/>
+								    </div>
+								</div>
+
+                <aside class="notes">
+								</aside>
 						</section>
 
 						<section>
@@ -855,6 +1186,7 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
                     </div>
                 </div>
                 <aside class="notes">
+									Saif talked about React + perf yesterday -- so definitely check out his talk for more info.
 									TODO DEMO
                 </aside>
             </section>
@@ -896,7 +1228,7 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
                     </div>
                 </div>
                 <aside class="notes">
-									TODO
+									TODO DEMO
                 </aside>
             </section>
 
@@ -926,6 +1258,11 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
                 </div>
 								<aside class="notes">
 									END
+In conclusion, there are some best practices you can employ to help you avoid bugs in the first place,
+some tools you can look into to catch bugs before they hit your users,
+and the React Devtools has got your back when you're fixen 'em.
+
+Thanks!
 								</aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
 						</section>
@@ -933,8 +1270,6 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
         </div>
     </div>
 </div>
-
-
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>

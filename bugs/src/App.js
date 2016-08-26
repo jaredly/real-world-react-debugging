@@ -28,7 +28,7 @@ const BadClick = React.createClass({
       fail();
     }
     return <button onClick={() => this.setState({on: true})}>
-      Don't click, this will problem
+      Do not click, this will problem
     </button>
   }
 })
@@ -107,6 +107,41 @@ const styles = {
   },
 }
 
+const Child = React.createClass({
+  getInitialState() {
+    return {clicked: false};
+  },
+  handleClick() {
+    this.setState({clicked: true});
+    this.props.onClick()
+  },
+  render() {
+    return (
+      <div style={{padding: 10, border: '1px solid #ccc',
+        backgroundColor: this.state.clicked ? 'green' : 'white',
+      }}>
+      <button onClick={this.handleClick}>
+        Click me
+      </button>
+      </div>
+    )
+  }
+});
+
+const Parent = React.createClass({
+  getInitialState() {
+    return {clicks: 0}
+  },
+  render() {
+    return (
+      <div style={{margin: '0 auto', width: 200, padding: 10, border: '1px solid #ccc'}}>
+      Parent clicks: {this.state.clicks}
+      <Child onClick={() => this.setState({clicks: this.state.clicks + 1})}/>
+      </div>
+    );
+  }
+});
+
 class App extends Component {
   constructor() {
     super()
@@ -152,6 +187,8 @@ class App extends Component {
         {Route && <pre style={{textAlign: 'left', width: 500, alignSelf: 'center', margin: '0 auto'}}>
           {sources[window.location.search.slice(1)]}
           </pre>}
+        <br/>
+        <Parent/>
       </div>
     );
   }
