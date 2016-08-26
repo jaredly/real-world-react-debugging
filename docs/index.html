@@ -246,9 +246,6 @@ these are definitely just guidelines, but hopefully it will give you an idea of 
                             <li>
                                 <span style="font-size:1.4em">Logic // presentation 🎉</span>
                             </li>
-                            <li>
-                                <span style="font-size:1.4em">FlowType 🛠</span>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -438,35 +435,6 @@ Big red flag.
 								</aside>
             </section>
 
-
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content">
-                        <h2>FlowType</h2>
-                    </div>
-                </div>
-                <!--div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
-                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
-                        <ul style="font-size:1.4em">
-                            <li class="fragment" data-fragment-index="0">
-																props == don't have to worry about mutation in this component
-                            </li>
-                            <li class="fragment" data-fragment-index="1">
-                                state == mutation of this data is limited to this component
-                            </li>
-                            <li class="fragment" data-fragment-index="2">
-                                instance variables == this data doesn't impact the render method
-                            </li>
-                        </ul>
-                    </div>
-                </div-->
-                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
-                <aside class="notes">
-The last thing I want to talk about is using Flow, and I won't say much other than the fact that we've started using it at KA, and the biggest benefit that we've seen is that it improves readability of the codebase --- have you ever looked at a function that takes some blob, gets some attribute out of it, and wondered, "I wonder what that blob is shaped like?"
-Or even more frightening, trying to refactor that blob to remove some attribute, and hoping despreately that you've found all the code that's expecting the blob to be shaped like that.
-
-								</aside>
-            </section>
 
 						<!-- ********************** CATCH BUGS **************************** -->
 
@@ -1072,17 +1040,6 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
 
             <section>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content">
-                        <h3>What component is broken?</h3>
-                    </div>
-                </div>
-                <aside class="notes">
-									TODO DEMO
-                </aside>
-            </section>
-
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
                     <div class="sl-block-content" style="z-index: 10;">
                         <h2>Questions React Devtools can help answer</h2>
                     </div>
@@ -1101,17 +1058,6 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-                </aside>
-            </section>
-
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content">
-                        <h3>How is the codebase organized?</h3>
-                    </div>
-                </div>
-                <aside class="notes">
-									TODO DEMO
                 </aside>
             </section>
 
@@ -1141,19 +1087,6 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
 
             <section>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content">
-                        <h3>
-                            <span>What's happening with the data?</span>
-                        </h3>
-                    </div>
-                </div>
-                <aside class="notes">
-									TODO DEMO
-                </aside>
-            </section>
-
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
                     <div class="sl-block-content" style="z-index: 10;">
                         <h2>Questions React Devtools can help answer</h2>
                     </div>
@@ -1177,14 +1110,6 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
                     </div>
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
-            </section>
-
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content">
-                        <h3>Why is this slow?</h3>
-                    </div>
-                </div>
                 <aside class="notes">
 									Saif talked about React + perf yesterday -- so definitely check out his talk for more info.
 									TODO DEMO
@@ -1219,20 +1144,12 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
                     </div>
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
-            </section>
-
-            <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content">
-                        <h3>Where is this defined?</h3>
-                    </div>
-                </div>
                 <aside class="notes">
-									TODO DEMO
+									This is something I'm super excited about, but takes a little bit of configuration, and isn't quite released yet :P but here's what this looks like:
                 </aside>
             </section>
 
-            <section>
+            <!--section>
                 <div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 70px; height: auto;">
                     <div class="sl-block-content" style="z-index: 10;">
                         <h2>What does it look like when...</h2>
@@ -1247,7 +1164,7 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section-->
 
 
 						<section>
