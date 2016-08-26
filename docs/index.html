@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Real World React Debugging</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme.css">
@@ -58,6 +58,8 @@ Hi! I'm a mobile and web developer at Khan Academy, where we're working to bring
 Last summer I interned at Facebook, where I rebuilt the React devtools extension, adding a bunch of features and bringing it to more platforms.
 
 and I'm gonna talk about debugging with react
+
+Before I start, though, I want to take a minute to talk about the React community.
 </aside>
             </section>
 
@@ -72,18 +74,15 @@ and I'm gonna talk about debugging with react
                         <p>Helping women feel comfortable in the React community</p>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 403px; height: auto;">
+                <!--div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 403px; height: auto;">
                     <div class="sl-block-content fragment" data-fragment-index="0" style="z-index: 10;">
                         <h3>A lack of diversity impoverishes us all.</h3>
                     </div>
-                </div>
+                </div-->
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-Before I start, though, I want to take a minute to talk about the React community.
-If you look around here, and at React meetups, etc. you'll see a ton more men than women. And I'm just gonna make the assertion: "A lack of diversity impoverishes us all"
-and right now I'm just doing to talk about the disparity between men and women -- there are lots of kinds of diversity that are important.
-
-So what can we do about this? Well here's a tweet from Safia from a couple of weeks ago that I've been thinking a lot about.
+And specifically, how we can make the React community a place where women can feel totally comfortable.
+Here's a tweet from Safia from a couple of weeks ago that I've been thinking a lot about.
 </aside>
             </section>
 
@@ -448,6 +447,13 @@ Big red flag.
                         <p>Just add Process™</p>
                     </div>
                 </div>
+
+<div class="sl-block" data-block-type="image" data-block-id="69813b91f47a639f497972eafbb1b53b" style="min-width: 30px; min-height: 30px; width: 360px; height: 229.029px; left: 300px; top: 420px;">
+    <div class="sl-block-content" style="z-index: 13;">
+        <img src="images/12.png" data-natural-width="525" data-natural-height="334" style=""/>
+    </div>
+</div>
+
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
 TODO image of fishing nets w/ bugs photoshopped into it.
@@ -464,7 +470,7 @@ Here are a couple of reasons why it might be"
             <section>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
                     <div class="sl-block-content">
-                        <h2>Catching bugs</h2>
+                        <h2>How do we catch bugs?</h2>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
@@ -493,7 +499,7 @@ twitter's great for that
             <section>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
                     <div class="sl-block-content">
-                        <h2>Catching bugs</h2>
+                        <h2>How do we catch bugs?</h2>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
@@ -526,26 +532,35 @@ So that's not actually sustainable --
                         <p>🙃 Our users are great 🙃</p>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
+
+<div class="sl-block fragment" data-fragment-index="0" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 800px; height: 450px; left: 80px; top: 210px;">
+    <div class="sl-block-content" style="z-index: 1;">
+        <img src="images/13.png" style="" data-natural-width="1280" data-natural-height="720"/>
+    </div>
+</div>
+<div class="sl-block fragment" data-fragment-index="1" style="z-index: 2; background-color: white; border: 5px solid white; width: 800px; height: 450px; left: 80px; top: 210px;">
+</div>
+
+                <div class="sl-block" data-block-type="text" style="z-index: 5; width: 800px; left: 80px; top: 245px; height: auto;">
                     <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
                         <ul>
-                            <li class="fragment" data-fragment-index="0">
-                                <span style="font-size:1.4em">several people are touching the code</span>
-                            </li>
                             <li class="fragment" data-fragment-index="1">
-                                <span style="font-size:1.4em">you expect to support this code for at least several months</span>
+                                <span style="font-size:1.4em">you have lots of production users that you care about</span>
                             </li>
                             <li class="fragment" data-fragment-index="2">
-                                <span style="font-size:1.4em">you have lots of production users that you care about</span>
+                                <span style="font-size:1.4em">several people are touching the code</span>
+                            </li>
+                            <li class="fragment" data-fragment-index="3">
+                                <span style="font-size:1.4em">you expect to support this code for at least several months</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
+If you've got lots of production users &amp; you'd really rather not they see the bugs you write.
 If you've got lots of people editing the same code
-If you'll be maintaining this code far into the future (this isn't a hackathon project or a one-off side project)
-Or if you've got lots of production users &amp; you'd really rather not they see the bugs you write.
+Or if you'll be maintaining this code far into the future (this isn't a hackathon project or a one-off side project)
 </aside>
             </section>
 
@@ -645,15 +660,14 @@ This is our lint config
             <section>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
                     <div class="sl-block-content">
-                        <h2>Linting Typos 🎉</h2>
+                        <h2>Linting typos 🎉</h2>
                     </div>
                 </div>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
                     <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
-                        <ul style="font-size: 42px; line-height: 70.98px;">
-                            <li>no-undef, no-dupe-keys 🎉</li>
-                            <li>react/jsx-no-undef 🎉</li>
-                            <li>react/jsx-no-duplicate-props 🎉</li>
+                        <ul style="font-size: 35px; line-height: 70.98px; font-family: monospace">
+                            <li>no-undef, react/jsx-no-undef 🎉</li>
+                            <li>no-dupe-keys,<br/>react/jsx-no-duplicate-props 🎉</li>
                         </ul>
                     </div>
                 </div>
@@ -812,7 +826,6 @@ So in addition to aggressive linting (there are a ton more rules than the ones I
 								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="0281c7739c8dd647cb725a5aea28d439">
 								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
 								        <h2>Fixtures 🛠</h2>
-												<h3>Example props data for components</h3>
 								    </div>
 								</div>
 								<div class="sl-block" data-block-type="shape" data-block-id="3c47de632a6743cfa1a5b65bf20660bd" style="min-width: 4px; min-height: 4px; width: 175px; height: 45px; left: 286px; top: 617px;">
@@ -930,11 +943,6 @@ This manages to catch a ton of exceptions that otherwise would have made it into
 								        </ul>
 								    </div>
 								</div>
-								<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 240px; left: 720px; top: 661px;" data-block-id="b60947803e935def5f93b75845700980">
-								    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102);">
-								        <p style="text-align: right;">@jaredforsyth</p>
-								    </div>
-								</div>
 
                 <aside class="notes">
 So that was fixtures. However, the fixture testing that we do currently at KA only verifies that they don't literally throw an error in the render method.
@@ -968,6 +976,14 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
                         <p>with React Devtools</p>
                     </div>
                 </div>
+
+
+<div class="sl-block" data-block-type="image" data-block-id="310bff524b1eb77a6dee5b3d623b7c57" style="min-width: 30px; min-height: 30px; width: 640px; height: 400px; left: 80px; top: 253px;">
+    <div class="sl-block-content" style="z-index: 13;">
+        <img src="images/11.png" data-natural-width="1280" data-natural-height="800" style=""/>
+    </div>
+</div>
+
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
                 </aside>
@@ -1172,7 +1188,7 @@ At KA we have a suite of end to end tests that we run on deploy, and they take ~
 
 
 						<section>
-							<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;" data-block-id="5a501927d9b85f7627ad95c5353bd37b">
+							<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 250px; height: auto;" data-block-id="5a501927d9b85f7627ad95c5353bd37b">
 	    <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
 	        <h3>Best Practices to avoid bugs</h3>
 	        <h3>Linting &amp; Tests to catch bugs</h3>
@@ -1231,7 +1247,7 @@ Thanks!
 				history: true,
         transition: 'fade',
         center: false,
-        showNotes: true,
+        // showNotes: true,
 				slideNumber: true,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
