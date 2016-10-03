@@ -55,9 +55,16 @@
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
 Hi! I'm a mobile and web developer at Khan Academy, where we're working to bring a world-class education to anyone anywhere.
-Last summer I interned at Facebook, where I rebuilt the React devtools extension, adding a bunch of features and bringing it to more platforms.
+Last year I interned at Facebook, where I rebuilt the React devtools extension, adding a bunch of features and bringing it to more platforms.
 
 and I'm gonna talk about debugging with react
+
+For a little background, Khan Academy has been using React for over 3 years --
+in fact, we were the first production users of React outside of Facebook, and
+we have over 1500 components; so we care about this a lot :D
+
+So what are you going to get out of this talk?
+couse.
 </aside>
             </section>
 
@@ -77,13 +84,7 @@ and I'm gonna talk about debugging with react
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-we all write bugs, and we wish we didn't.
-So I'm going to talk about how to avoid writing bugs in the first place, how to catch the bugs you do write, and then how to fix the bugs you find.
-
-And I'm going to be talking about a lot of different tools, techniques, best practices. but I want to make it clear that these things all have their tradeoffs. some have really cool benefits, but if you're just on a small team, or starting a side project, the associated hassle won't be worth it. so I've come up with this scale for you to make that clear
-
-// if you spend a lot of time writing code, and you're like me, then you also spend a lot of time writing bugs.
-// we all probably spend a fair amount of time writing bugs, with some working code mixed in with it.
+Confidence, serenity, and self esteem!
 								</aside>
             </section>
 
@@ -100,35 +101,20 @@ And I'm going to be talking about a lot of different tools, techniques, best pra
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
+seriously, though :D
 we all write bugs, and we wish we didn't.
-So I'm going to talk about how to avoid writing bugs in the first place, how to catch the bugs you do write, and then how to fix the bugs you find.
+So I'm going to be talking about some tools that React provides us for fixing
+bugs, how to find bugs before your users do, and how to avoid writing bugs in
+the first place.
 
-And I'm going to be talking about a lot of different tools, techniques, best practices. but I want to make it clear that these things all have their tradeoffs. some have really cool benefits, but if you're just on a small team, or starting a side project, the associated hassle won't be worth it. so I've come up with this scale for you to make that clear
-
-// if you spend a lot of time writing code, and you're like me, then you also spend a lot of time writing bugs.
-// we all probably spend a fair amount of time writing bugs, with some working code mixed in with it.
+And I'm going to be talking about a lot of different tools, techniques, best
+practices. but I want to make it clear that these things all have their
+tradeoffs. some have really cool benefits, but if you're just on a small team,
+or starting a side project, the associated hassle won't be worth it. so I've
+come up with this key for y'all
+hassle
 								</aside>
             </section>
-
-            <!--section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
-                    <div class="sl-block-content" style="font-size: 200%; text-align: left; z-index: 10;">
-                        <h2>Fix Bugs</h2>
-                        <h2>Catch Bugs</h2>
-                        <h2>Prevent Bugs</h2>
-                    </div>
-                </div>
-                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
-                <aside class="notes">
-we all write bugs, and we wish we didn't.
-So I'm going to talk about how to avoid writing bugs in the first place, how to catch the bugs you do write, and then how to fix the bugs you find.
-
-And I'm going to be talking about a lot of different tools, techniques, best practices. but I want to make it clear that these things all have their tradeoffs. some have really cool benefits, but if you're just on a small team, or starting a side project, the associated hassle won't be worth it. so I've come up with this scale for you to make that clear
-
-// if you spend a lot of time writing code, and you're like me, then you also spend a lot of time writing bugs.
-// we all probably spend a fair amount of time writing bugs, with some working code mixed in with it.
-								</aside>
-            </section-->
 
             <section>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 136px; height: auto;">
@@ -161,38 +147,32 @@ these are definitely just guidelines, but hopefully it will give you an idea of 
 
             <section>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 58px; height: auto;">
-                    <div class="sl-block-content" style="font-size: 200%; text-align: left; z-index: 10;">
+                    <div class="sl-block-content" style="font-size: 200%; text-align: center; z-index: 10;">
                         <h1>Fix bugs</h1>
                     </div>
                 </div>
 
-                <!--div class="sl-block" data-block-type="image" data-block-id="310bff524b1eb77a6dee5b3d623b7c57" style="min-width: 30px; min-height: 30px; width: 640px; height: 400px; left: 80px; top: 253px;">
-                    <div class="sl-block-content" style="z-index: 13;">
-                        <img src="images/bug-vs-feature.gif" data-natural-width="1280" data-natural-height="800" style=""/>
-                    </div>
-                </div-->
-
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-                    As developers, we spend an aweful lof ot time simulating a
-                    computer in  our heads - to predict what will happen, to
-                    understand the current state of the program so that we can
-                    safely make changes to it.
+As developers, we spend an aweful lof ot time simulating a
+computer in  our heads - to predict what will happen, to
+understand the current state of the program so that we can
+safely make changes to it.
 
-                    This is especially true with debugging -- we know the
-                    starting parameters of the program, and we see a failure
-                    case, and then it's up to us to fill in the gaps,
-                    simulating the steps that resulted in a failure.
+This is especially true with debugging -- we know the
+starting parameters of the program, and we see a failure
+case, and then it's up to us to fill in the gaps,
+simulating the steps that resulted in a failure.
 
-                    This has always bugged me, because we have a perfectly
-                    good computer sitting in front of us, which has already
-                    done all these steps, and at any rate does the simulation
-                    faster &amp; more accurately!
+This has always bugged me, because we have a perfectly
+good computer sitting in front of us, which has already
+done all these steps, and at any rate does the simulation
+faster &amp; more accurately!
 
-                    Therefore, one of the primary functions of debugging tools
-                    is to shine a light into the black box -- to give you
-                    insight into the runtime state of your program, so you
-                    don't have to replicate everything in your head.
+Therefore, one of the primary functions of debugging tools
+is to shine a light into the black box -- to give you
+insight into the runtime state of your program, so you
+don't have to replicate everything in your head.
                 </aside>
             </section>
 
@@ -213,6 +193,18 @@ these are definitely just guidelines, but hopefully it will give you an idea of 
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
+If you've done any working with react, you'll have seen
+some of these warnings :P
+
+React does us a big favor in flagging errors - and
+potential errors - which can be indicators of deeper
+underlying problems.
+
+(jsx-source is a babel transform that will give your react
+warnings line numbers - which can be a huge help)
+
+Here's a demo app that has a number of problems that React
+has flagged for us.
                 </aside>
             </section>
 
@@ -232,14 +224,14 @@ these are definitely just guidelines, but hopefully it will give you an idea of 
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
-                  - what component is this?
-                  - how is this organized?
-                  - where's that component? (jump to file)
-                  - what's the data doing?
-                  - why is this slow?
-                  - $r - play with it
+    - what component is this?
+    - how is this organized?
+    - where's that component? (jump to file)
+    - what's the data doing?
+    - why is this slow?
+    - $r - play with it
 
-									This is something I'm super excited about, but takes a little bit of configuration, and isn't quite released yet :P but here's what this looks like:
+    This is something I'm super excited about, but takes a little bit of configuration, and isn't quite released yet :P but here's what this looks like:
                 </aside>
             </section>
 
@@ -671,19 +663,19 @@ However, sometimes you just want to get things done and not worry about prop typ
                     </div>
                 </div>
                 <aside class="notes">
-                    A type checker can quickly get you to the source of a
-                    problem that would take much longer if you're doing
-                    runtime debugging. Very frequently in javascript, the
-                    place an exception is thrown is far removed from the place
-                    where the error actually occurred, and you've been passing
-                    around bad data for a while before you check &amp; see
-                    what's there.
+A type checker can quickly get you to the source of a
+problem that would take much longer if you're doing
+runtime debugging. Very frequently in javascript, the
+place an exception is thrown is far removed from the place
+where the error actually occurred, and you've been passing
+around bad data for a while before you check &amp; see
+what's there.
 
-                    We're pretty used to passing around blobs of data in
-                    ad-hoc objects, and one typo in an attribute name can
-                    cause damage that we don't detect until you try to get it
-                    out, maybe in a different function, maybe in a different
-                    file.
+We're pretty used to passing around blobs of data in
+ad-hoc objects, and one typo in an attribute name can
+cause damage that we don't detect until you try to get it
+out, maybe in a different function, maybe in a different
+file.
 </aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
             </section>
@@ -773,15 +765,15 @@ assert.equals(myComplexFunction({edge: false, corner: true}), 780);
                 </div>
 
                 <aside class="notes">
-                    This is super valid, and makes total sense to me. You've
-                    got complex logic going on, you should write up some tests
-                    &amp; make your experience much more plesent, and give you
-                    confidence that you wrote it correctly.
-                    How does this apply to react? Well I'd strongly suggest
-                    that if you find yourself with complex logic inside of a
-                    component, rip it out, make it into a pure function, and
-                    then test that. Then the component will be simple enough
-                    that it won't need this kind of test.
+This is super valid, and makes total sense to me. You've
+got complex logic going on, you should write up some tests
+&amp; make your experience much more plesent, and give you
+confidence that you wrote it correctly.
+How does this apply to react? Well I'd strongly suggest
+that if you find yourself with complex logic inside of a
+component, rip it out, make it into a pure function, and
+then test that. Then the component will be simple enough
+that it won't need this kind of test.
 </aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
             </section>
@@ -806,35 +798,35 @@ assert.isFunction($('#signup').onclick);
                 </div>
 
                 <aside class="notes">
-                    How many of you have this kind of test where you work?
-                    There's no complex logic here - it's super basic
-                    rendering, but this test is just to make sure somebody
-                    doesn't accidentally break your signup button.
+How many of you have this kind of test where you work?
+There's no complex logic here - it's super basic
+rendering, but this test is just to make sure somebody
+doesn't accidentally break your signup button.
 
-                    How many have been saved by this kind of test?
-                    How many have been *slowed* by this kind of test?
+How many have been saved by this kind of test?
+How many have been *slowed* by this kind of test?
 
-                    You see, the real problem we're trying to solve here is
-                    unintended consequences. You make a change to something
-                    this component depends on, and you don't realize it
-                    changed this component.
-                    Or you make a change to this component, but accidentally
-                    delete the submit button.
+You see, the real problem we're trying to solve here is
+unintended consequences. You make a change to something
+this component depends on, and you don't realize it
+changed this component.
+Or you make a change to this component, but accidentally
+delete the submit button.
 
-                    Well, one way is to list out all the possible things we
-                    might care about this function. But that gets brittle
-                    fast.
+Well, one way is to list out all the possible things we
+might care about this function. But that gets brittle
+fast.
 
-                    Another way, and I would argue a better way, is to just
-                    have a tool that alerts you to changes so that you're
-                    aware of the effects of your code. I'll explain more in a
-                    second, but first I'll talk about fixtures.
+Another way, and I would argue a better way, is to just
+have a tool that alerts you to changes so that you're
+aware of the effects of your code. I'll explain more in a
+second, but first I'll talk about fixtures.
 
-                    We've had prop fixture data at Khan Academy for a couple
-                    years now, and they're helpful in a bunch of different
-                    ways. I initially built this fixture system to be able to
-                    see different configurations of a component at the same
-                    time, to make sure I wasn't breaking anything.
+We've had prop fixture data at Khan Academy for a couple
+years now, and they're helpful in a bunch of different
+ways. I initially built this fixture system to be able to
+see different configurations of a component at the same
+time, to make sure I wasn't breaking anything.
 </aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
             </section>
@@ -866,17 +858,6 @@ assert.isFunction($('#signup').onclick);
 
                 <aside class="notes">
 
-
-<!--
-Now, I've historically been very skeptical of UI testing. I've kept an eye on UI testing frameworks that come up, and there are several cool ones specifically for react, but always I'm reminded of an experience I had at one of the first places I worked.
-It was a very large team, gnarly codebase with lots of shared state &amp; stuff, and there was this huge suite of UI tests that took like an hour to run, and had a whole team of 6 engineers whose sole job was to maintain the tests.
-And that's not what I want. For anythign short of a massive organization, this would be overkill, and even then I'd think twice.
-
-So my general take as been "if you've got any testable logic going on, don't couple it to your UI -- extract it into a pure function (or class) and test it like normal."
-However, that doesn't end up being good enough, especially if you're in a large organization. And at Khan Academy, we have 1 and a half thousand components -- we want some more garentees that they're all doing reasonable things.
-
-So in addition to aggressive linting (there are a ton more rules than the ones I just mentioned), we use fixtures.
--->
 								</aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
             </section>
@@ -1383,7 +1364,8 @@ Big red flag.
 								</div>
 
 								<aside class="notes">
-									END
+END
+
 In conclusion, there are some best practices you can employ to help you avoid bugs in the first place,
 some tools you can look into to catch bugs before they hit your users,
 and the React Devtools has got your back when you're fixen 'em.
