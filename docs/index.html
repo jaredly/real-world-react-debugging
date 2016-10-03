@@ -65,7 +65,7 @@ and I'm gonna talk about debugging with react
 <!-- *************************** INTRO *************************** -->
 
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 150px; top: 150px; height: auto;">
                     <div class="sl-block-content" style="font-size: 100%; text-align: left; z-index: 10;">
                         <h2>Confidence 😀</h2>
                         <p>that you can fix the bugs you find</p>
@@ -88,7 +88,7 @@ And I'm going to be talking about a lot of different tools, techniques, best pra
             </section>
 
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 150px; top: 150px; height: auto;">
                     <div class="sl-block-content" style="font-size: 100%; text-align: left; z-index: 10;">
                         <h2>Fix bugs ⛏🐛</h2>
                         <p>with devtools</p>
@@ -202,7 +202,7 @@ these are definitely just guidelines, but hopefully it will give you an idea of 
                         <h2>React warnings</h2>
                     </div>
                 </div>
-                <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 180px;">
+                <div class="sl-block fragment" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 180px;">
                             <p style="font-size: 60%">(tip: install <a
                                                                                                                              href="https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source">babel-plugin-transform-react-jsx-source</a>)</p>
                     <div class="sl-block-content" style="z-index: 12; text-align: center; font-size: 125%; line-height: 1.95;" data-has-line-height="">
@@ -219,25 +219,16 @@ these are definitely just guidelines, but hopefully it will give you an idea of 
             <section>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
                     <div class="sl-block-content" style="z-index: 10;">
-                        <h2>Questions React Devtools can help answer</h2>
+                        <h2>Shine a 🔦 into the ◼️</h2>
+                        <p>with React Devtools</p>
                     </div>
-                        <ul>
-                            <li>
-                                <span style="font-size:1.4em">What component is broken?</span>
-                            </li>
-                            <li>
-                                <span style="font-size:1.4em">How is this codebase even organized?</span>
-                            </li>
-                            <li>
-                                <span style="font-size:1.4em">What's happening with the data?</span>
-                            </li>
-                            <li>
-                                <span style="font-size:42px">Why is this slow?</span>
-                            </li>
-                            <li>
-                                <span style="font-size:42px">Where's this defined? 🔧</span>
-                            </li>
-                        </ul>
+                    <ul style="font-size: 1.4em; margin-top: 30px; line-height: 1.5">
+                        <li>What component is this?</li>
+                        <li>How is this organized?</li>
+                        <li>Where's this defined?</li>
+                        <li>What's the data doing?</li>
+                        <li>Why is this slow?</li>
+                    </ul>
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
@@ -263,11 +254,11 @@ these are definitely just guidelines, but hopefully it will give you an idea of 
                     </div>
                 </div>
 
-<div class="sl-block" data-block-type="image" data-block-id="69813b91f47a639f497972eafbb1b53b" style="min-width: 30px; min-height: 30px; width: 360px; height: 229.029px; left: 300px; top: 420px;">
-    <div class="sl-block-content" style="z-index: 13;">
-        <img src="images/12.png" data-natural-width="525" data-natural-height="334" style=""/>
-    </div>
-</div>
+                <div class="sl-block" data-block-type="image" data-block-id="69813b91f47a639f497972eafbb1b53b" style="min-width: 30px; min-height: 30px; width: 360px; height: 229.029px; left: 300px; top: 420px;">
+                    <div class="sl-block-content" style="z-index: 13;">
+                        <img src="images/12.png" data-natural-width="525" data-natural-height="334" style=""/>
+                    </div>
+                </div>
 
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
                 <aside class="notes">
@@ -673,20 +664,10 @@ However, sometimes you just want to get things done and not worry about prop typ
 
 
             <section>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;">
                     <div class="sl-block-content">
                         <h2>Type annotations</h2>
                         <p>Flow or TypeScript</p>
-                    </div>
-                </div>
-                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
-                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
-                        <ul style="font-size: 42px; line-height: 70.98px;">
-                            <li>calling a fn with the wrong args</li>
-                            <li>accessing a property that doesn't exist</li>
-                            <li>"x is not a function"</li>
-                            <li>data has the wrong "shape"</li>
-                        </ul>
                     </div>
                 </div>
                 <aside class="notes">
@@ -704,6 +685,29 @@ However, sometimes you just want to get things done and not worry about prop typ
                     out, maybe in a different function, maybe in a different
                     file.
 </aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h2>Type annotations</h2>
+                        <p>What bugs will they catch?</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
+                        <ul style="font-size: 42px; line-height: 70.98px;">
+                            <li>calling a fn with the wrong args</li>
+                            <li>accessing a property that doesn't exist</li>
+                            <li>"x is not a function"</li>
+                            <li>data has the wrong "shape"</li>
+                        </ul>
+                    </div>
+                </div>
+                <aside class="notes">
+                </aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
             </section>
 
@@ -1352,9 +1356,9 @@ Big red flag.
 							<section>
 								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 250px; height: auto;" data-block-id="5a501927d9b85f7627ad95c5353bd37b">
 								    <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
-								        <h3>Best Practices to avoid bugs</h3>
-								        <h3>Linting &amp; Tests to catch bugs</h3>
 								        <h3>React Devtools to fix bugs</h3>
+								        <h3>Linting &amp; Tests to catch bugs</h3>
+								        <h3>Best Practices to avoid bugs</h3>
 								    </div>
 								</div>
 								<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 431px;">
