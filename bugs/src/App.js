@@ -129,6 +129,9 @@ const Child = React.createClass({
 });
 
 const Parent = React.createClass({
+  propTypes: {
+    numFriends: React.PropTypes.number.isRequired,
+  },
   getInitialState() {
     return {clicks: 0}
   },
@@ -141,6 +144,7 @@ const Parent = React.createClass({
     );
   }
 });
+let Nothing = undefined;
 
 class App extends Component {
   constructor() {
@@ -188,7 +192,11 @@ class App extends Component {
           {sources[window.location.search.slice(1)]}
           </pre>}
         <br/>
-        <Parent/>
+        <Parent numFriends="none"/>
+        {[1,2,3].map(x => <span />)}
+        <Nothing
+          name={10}
+        />
       </div>
     );
   }
