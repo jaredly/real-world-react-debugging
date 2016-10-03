@@ -67,12 +67,35 @@ and I'm gonna talk about debugging with react
             <section>
                 <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
                     <div class="sl-block-content" style="font-size: 100%; text-align: left; z-index: 10;">
-                        <h2>Confidence</h2>
+                        <h2>Confidence 😀</h2>
                         <p>that you can fix the bugs you find</p>
-                        <h2>Serenity</h2>
+                        <h2>Serenity 😇</h2>
                         <p>sleep peacefully w/ tools in place to catch bugs</p>
-                        <h2>Self esteem</h2>
+                        <h2>Self esteem 😎</h2>
                         <p>from a codebase that's clean &amp; easy to maintain</p>
+                    </div>
+                </div>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+                <aside class="notes">
+we all write bugs, and we wish we didn't.
+So I'm going to talk about how to avoid writing bugs in the first place, how to catch the bugs you do write, and then how to fix the bugs you find.
+
+And I'm going to be talking about a lot of different tools, techniques, best practices. but I want to make it clear that these things all have their tradeoffs. some have really cool benefits, but if you're just on a small team, or starting a side project, the associated hassle won't be worth it. so I've come up with this scale for you to make that clear
+
+// if you spend a lot of time writing code, and you're like me, then you also spend a lot of time writing bugs.
+// we all probably spend a fair amount of time writing bugs, with some working code mixed in with it.
+								</aside>
+            </section>
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content" style="font-size: 100%; text-align: left; z-index: 10;">
+                        <h2>Fix bugs ⛏🐛</h2>
+                        <p>with devtools</p>
+                        <h2>Catch bugs 🎣🐛</h2>
+                        <p>with linting, types, and tests</p>
+                        <h2>Prevent bugs 🚫🐛</h2>
+                        <p>with Good Practices™</p>
                     </div>
                 </div>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
@@ -425,9 +448,15 @@ twitter's great for that
                                 <span style="font-size:1.4em">your users 🎉 🙃</span>
                             </li>
                             <li class="fragment" data-fragment-index="0">
-                                <span style="font-size:1.4em">linting 🔧🛠</span>
+                                <span style="font-size:1.4em">propTypes 🎉🔧</span>
                             </li>
                             <li class="fragment" data-fragment-index="1">
+                                <span style="font-size:1.4em">linting 🔧🛠</span>
+                            </li>
+                            <li class="fragment" data-fragment-index="2">
+                                <span style="font-size:1.4em">type annotations 🔧🛠</span>
+                            </li>
+                            <li class="fragment" data-fragment-index="3">
                                 <span style="font-size:1.4em">testing 🛠🛠</span>
                             </li>
                         </ul>
@@ -480,6 +509,77 @@ Or if you'll be maintaining this code far into the future (this isn't a hackatho
 </aside>
             </section>
 
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h2>Prop Types 🎉</h2>
+                    </div>
+                </div>
+
+								<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 230px; line-height: 1.8">
+								    <div class="sl-block-content" style="z-index: 12; font-size: 100%;">
+                        <ul>
+                            <li>documentation that's code</li>
+                            <li>tests w/ runtime warnings in dev</li>
+                            <li>much more flexible than types</li>
+                            <li>no runtime cost in production</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <aside class="notes">
+Prop types are a brilliant, but from what I've seen rather underutilized
+feature of react. They're very flexible, have no production runtime cost, and
+are very easy to gradually integrate into your codebase.
+</aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h2>Prop Types 🎉</h2>
+                    </div>
+                </div>
+
+								<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 210px;">
+								    <div class="sl-block-content" style="z-index: 12; font-size: 100%;">
+								        <pre class="javascript">
+								            <code>const {cursorContextPropType, keyIdPropType} = require('./prop-types');
+const ExpressionKeypad = React.createClass({
+    propTypes: {
+        // basic propType
+        currentPage: React.PropTypes.number.isRequired,
+        // shared proptype definition, imported from `./prop-types.js`
+        cursorContext: cursorContextPropType.isRequired,
+        dynamicJumpOut: React.PropTypes.bool,
+        // complex prop type, using an imported definition
+        extraKeys: React.PropTypes.arrayOf(keyIdPropType),
+        roundTopLeft: React.PropTypes.bool,
+        roundTopRight: React.PropTypes.bool,
+    },
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="sl-block fragment" data-block-type="image" style="min-width: 30px; min-height: 30px; left: 200px; top: 250px; width: 560px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 100;">
+                        <img src="images/alert.png" style="" />
+                    </div>
+                </div>
+
+
+                <aside class="notes">
+Prop types are a brilliant, but from what I've seen rather underutilized
+feature of react. They're very flexible, have no production runtime cost, and
+are very easy to gradually integrate into your codebase.
+</aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
             <section>
 								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
 								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
@@ -519,8 +619,6 @@ Or if you'll be maintaining this code far into the future (this isn't a hackatho
         "react/prop-types": 2,
         "react/self-closing-comp": 2,
         "react/sort-comp": 2,
-        // TODO(riley): Introduce this rule once we upgrade to &gt;= 2.0.0.
-        // "template-curly-spacing": 2,
         // ---------------------------------------
         // ES6/jsx stuff we explicitly disable.
         // We turned this off since it was too much work for too
@@ -531,9 +629,6 @@ Or if you'll be maintaining this code far into the future (this isn't a hackatho
         "prefer-template": 0,
         // We've decided explicitly not to care about this.
         "arrow-parens": 0,
-        // ---------------------------------------
-        // ES6/jsx stuff that's disabled for now, but maybe shouldn't be.
-        // TODO(csilvers): enable these if/when community agrees on it.
         "prefer-arrow-callback": 0
     },
     "ecmaFeatures": {
@@ -552,8 +647,6 @@ Or if you'll be maintaining this code far into the future (this isn't a hackatho
         "react"
     ],
     "env": {
-        // TODO(csilvers): once we properly use eslintrc.node for node
-        // files, get rid of this next line.
         "node": true,
         "browser": true,
         "es6": true
@@ -598,7 +691,7 @@ They'll warn you if you misspelled a variable, forgot to import a component, or 
             <section>
 							<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="eb17a8a631d47c54d504476241607fbb">
 							    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-							        <h2>no-undef 🎉</h2>
+							        <h2>lint: no-undef 🎉</h2>
 							        <p>Catching simple mistakes</p>
 							    </div>
 							</div>
@@ -624,7 +717,7 @@ const NoUndef = React.createClass({
             <section>
 							<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="eb17a8a631d47c54d504476241607fbb">
 							    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-							        <h2>no-duplicate-props 🎉</h2>
+							        <h2>lint: no-duplicate-props 🎉</h2>
 							        <p>Catching simple mistakes</p>
 							    </div>
 							</div>
@@ -695,8 +788,7 @@ And this has literally happened to me in real life - and then I come in and make
                     </div>
                 </div>
                 <aside class="notes">
-Prop Types can be a really valuable pattern for catching bugs -- React will warn you if a client is using a component in an unexpected way. They also serve as great documentation -- when looking at a component, I can read the prop types &amp; often get a good idea of what's expected.
-However, they do take some maintainance, and it's not too hard for them to get out of sync with your actual component. That's where the `react/prop-types` rule comes in -- it will error if you use a prop in your component that you didn't specify in the propTypes declaration.
+Prop Types can be a really valuable pattern for catching bugs -- they do take some maintainance, and it's not too hard for them to get out of sync with your actual component. That's where the `react/prop-types` rule comes in -- it will error if you use a prop in your component that you didn't specify in the propTypes declaration.
 We use the `forbid-prop-types` rule to raise an error if you use the catch-all prop types "array &amp; object", which are too general to be useful documentation or to catch many bugs.
 However, sometimes you just want to get things done and not worry about prop types until later -- and these lint rules will get in the way. So be aware of the tradeoffs.
 </aside>
@@ -705,22 +797,197 @@ However, sometimes you just want to get things done and not worry about prop typ
 
 
             <section>
-								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="fcf08e5ab12d9d81f9462a3b179cc035">
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h2>Type annotations</h2>
+                        <p>Flow or TypeScript</p>
+                    </div>
+                </div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 245px; height: auto;">
+                    <div class="sl-block-content" data-has-line-height="" style="line-height: 1.69;">
+                        <ul style="font-size: 42px; line-height: 70.98px;">
+                            <li>calling a fn with the wrong args</li>
+                            <li>accessing a property that doesn't exist</li>
+                            <li>"x is not a function"</li>
+                            <li>data has the wrong "shape"</li>
+                        </ul>
+                    </div>
+                </div>
+                <aside class="notes">
+                    A type checker can quickly get you to the source of a
+                    problem that would take much longer if you're doing
+                    runtime debugging. Very frequently in javascript, the
+                    place an exception is thrown is far removed from the place
+                    where the error actually occurred, and you've been passing
+                    around bad data for a while before you check &amp; see
+                    what's there.
+
+                    We're pretty used to passing around blobs of data in
+                    ad-hoc objects, and one typo in an attribute name can
+                    cause damage that we don't detect until you try to get it
+                    out, maybe in a different function, maybe in a different
+                    file.
+</aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+            <section>
+								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 250px; height: auto;" data-block-id="fcf08e5ab12d9d81f9462a3b179cc035">
 								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-								        <h2>Automated Testing</h2>
+								        <h2>Automated testing</h2>
 								    </div>
 								</div>
-								<div class="sl-block fragment" data-fragment-index="0" data-block-type="text" style="width: 800px; left: 80px; top: 195px; height: auto;" data-block-id="3466d05db4a7f24c852403722ca19184">
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+            <section>
+								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="fcf08e5ab12d9d81f9462a3b179cc035">
+								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+								        <h2>What does testing give us?</h2>
+								    </div>
+								</div>
+								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 195px; height: auto;" data-block-id="3466d05db4a7f24c852403722ca19184">
 								    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" data-has-line-height="" style="line-height: 1.69; z-index: 11;">
-								        <ul>
+								        <ul style="font-size: 1.4em">
 								            <li>
-								                <span style="font-size:1.4em">Fixtures 🛠</span>
+								                verify complex behavior
+								            </li>
+								            <li>
+                                prevent regressions
 								            </li>
 								        </ul>
 								    </div>
 								</div>
 
                 <aside class="notes">
+								</aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h2>Verify complex behavior</h2>
+                    </div>
+                </div>
+
+								<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 210px;">
+								    <div class="sl-block-content" style="z-index: 12; font-size: 100%;">
+								        <pre class="javascript">
+								            <code>const myComplexFunction = require('../lib/my-complex-function');
+
+// better make sure we cover these edge cases
+assert.equals(myComplexFunction({edge: true}), 100);
+assert.equals(myComplexFunction({edge: false}), 10);
+assert.equals(myComplexFunction({edge: false, corner: true}), 780);
+
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="sl-block fragment" data-block-type="text" style="width: 800px; left: 80px; top: 420px; height: auto;">
+                    <div class="sl-block-content">
+                        <p>complex logic doesn't belong in components</p>
+                        <p>put it in a pure function!</p>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    This is super valid, and makes total sense to me. You've
+                    got complex logic going on, you should write up some tests
+                    &amp; make your experience much more plesent, and give you
+                    confidence that you wrote it correctly.
+                    How does this apply to react? Well I'd strongly suggest
+                    that if you find yourself with complex logic inside of a
+                    component, rip it out, make it into a pure function, and
+                    then test that. Then the component will be simple enough
+                    that it won't need this kind of test.
+</aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;">
+                    <div class="sl-block-content">
+                        <h2>Prevent regressions</h2>
+                    </div>
+                </div>
+
+								<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 210px;">
+								    <div class="sl-block-content" style="z-index: 12; font-size: 100%;">
+								        <pre class="javascript">
+								            <code>// we better render that signup button
+assert.exists($('#signup'));
+assert.isFunction($('#signup').onclick);
+
+// ... ad nausium
+</code></pre>
+                    </div>
+                </div>
+
+                <aside class="notes">
+                    How many of you have this kind of test where you work?
+                    There's no complex logic here - it's super basic
+                    rendering, but this test is just to make sure somebody
+                    doesn't accidentally break your signup button.
+
+                    How many have been saved by this kind of test?
+                    How many have been *slowed* by this kind of test?
+
+                    You see, the real problem we're trying to solve here is
+                    unintended consequences. You make a change to something
+                    this component depends on, and you don't realize it
+                    changed this component.
+                    Or you make a change to this component, but accidentally
+                    delete the submit button.
+
+                    Well, one way is to list out all the possible things we
+                    might care about this function. But that gets brittle
+                    fast.
+
+                    Another way, and I would argue a better way, is to just
+                    have a tool that alerts you to changes so that you're
+                    aware of the effects of your code. I'll explain more in a
+                    second, but first I'll talk about fixtures.
+
+                    We've had prop fixture data at Khan Academy for a couple
+                    years now, and they're helpful in a bunch of different
+                    ways. I initially built this fixture system to be able to
+                    see different configurations of a component at the same
+                    time, to make sure I wasn't breaking anything.
+</aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+
+
+            <section>
+								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="fcf08e5ab12d9d81f9462a3b179cc035">
+								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+								        <h2>Automated Testing</h2>
+                        <p>prevent regressions with less hassle</p>
+								    </div>
+								</div>
+								<div class="sl-block " data-block-type="text" style="width: 800px; left: 80px; top: 225px; height: auto;" data-block-id="3466d05db4a7f24c852403722ca19184">
+								    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" data-has-line-height="" style="line-height: 1.69; z-index: 11;">
+								        <ul>
+								            <li class="fragment" data-fragment-index="0">
+								                <span style="font-size:1.4em">Fixtures 🛠</span>
+								            </li>
+								            <li class="fragment" data-fragment-index="1">
+								                <span style="font-size:1.4em">Jest Snapshot tests 🛠</span>
+								            </li>
+								            <li class="fragment" data-fragment-index="2">
+								                <span style="font-size:1.4em">Visual regression tests 🛠</span>
+								            </li>
+								        </ul>
+								    </div>
+								</div>
+
+                <aside class="notes">
+
+
+<!--
 Now, I've historically been very skeptical of UI testing. I've kept an eye on UI testing frameworks that come up, and there are several cool ones specifically for react, but always I'm reminded of an experience I had at one of the first places I worked.
 It was a very large team, gnarly codebase with lots of shared state &amp; stuff, and there was this huge suite of UI tests that took like an hour to run, and had a whole team of 6 engineers whose sole job was to maintain the tests.
 And that's not what I want. For anythign short of a massive organization, this would be overkill, and even then I'd think twice.
@@ -729,6 +996,7 @@ So my general take as been "if you've got any testable logic going on, don't cou
 However, that doesn't end up being good enough, especially if you're in a large organization. And at Khan Academy, we have 1 and a half thousand components -- we want some more garentees that they're all doing reasonable things.
 
 So in addition to aggressive linting (there are a ton more rules than the ones I just mentioned), we use fixtures.
+-->
 								</aside>
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
             </section>
@@ -739,8 +1007,15 @@ So in addition to aggressive linting (there are a ton more rules than the ones I
 								        <h2>Fixtures 🛠</h2>
 								    </div>
 								</div>
+
+								<div class="sl-block fragment" data-fragment-index="0" data-block-type="image" data-block-id="d254cce40dab299472155abfe2ca3716" style="min-width: 30px; min-height: 30px; width: 387.936px; height: 601px; left: 286px; top: 74px;">
+								    <div class="sl-block-content" style="z-index: 0;">
+								        <img src="images/6.png" style="" data-natural-width="386" data-natural-height="598"/>
+								    </div>
+								</div>
+
 								<div class="sl-block" data-block-type="shape" data-block-id="3c47de632a6743cfa1a5b65bf20660bd" style="min-width: 4px; min-height: 4px; width: 175px; height: 45px; left: 286px; top: 617px;">
-								    <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 11;" data-shape-stroke-color="#ff0000" data-shape-stroke-width="5" data-fragment-index="0">
+								    <div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 11;" data-shape-stroke-color="#ff0000" data-shape-stroke-width="5" data-fragment-index="1">
 								        <svg
 								            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 175 45">
 								            <defs>
@@ -750,11 +1025,6 @@ So in addition to aggressive linting (there are a ton more rules than the ones I
 								            </defs>
 								            <rect width="175" height="45" clip-path="url(#shape-mask-333-1472070973063)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#ff0000" stroke-width="10"></rect>
 								        </svg>
-								    </div>
-								</div>
-								<div class="sl-block" data-block-type="image" data-block-id="d254cce40dab299472155abfe2ca3716" style="min-width: 30px; min-height: 30px; width: 387.936px; height: 601px; left: 286px; top: 74px;">
-								    <div class="sl-block-content" style="z-index: 0;">
-								        <img src="images/6.png" style="" data-natural-width="386" data-natural-height="598"/>
 								    </div>
 								</div>
 
@@ -830,42 +1100,151 @@ This manages to catch a ton of exceptions that otherwise would have made it into
                 <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
 						</section>
 
-
             <section>
-								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="fcf08e5ab12d9d81f9462a3b179cc035">
-								    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
-								        <h2>Automated Testing</h2>
-								    </div>
-								</div>
-								<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 195px; height: auto;" data-block-id="3466d05db4a7f24c852403722ca19184">
-								    <div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" data-has-line-height="" style="line-height: 1.69; z-index: 11;">
-								        <ul>
-								            <li>
-								                <span style="font-size:1.4em">Fixtures 🛠</span>
-								            </li>
-								            <!--li class="fragment" data-fragment-index="0">
-								                <span style="font-size:1.4em">E2E Tests 🛠🛠</span>
-								            </li-->
-								            <li class="fragment" data-fragment-index="0">
-								                <span style="font-size:1.4em">Jest Snapshot tests 🔧</span>
-								            </li>
-								            <li class="fragment" data-fragment-index="0">
-								                <span style="font-size:1.4em">Visual regression tests 🛠</span>
-								            </li>
-								        </ul>
-								    </div>
-								</div>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="bddbf9c46867b3b4f42578277f6e79cb">
+                    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+                        <h2>Jest snapshot tests 🛠</h2>
+                    </div>
+                </div>
+
+								<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 100px;">
+								    <div class="sl-block-content fragment" style="z-index: 12; font-size: 100%;">
+								        <pre class="javascript">
+								            <code>// signup-page-test.js
+import renderer from 'react-test-renderer';
+test('Signup page renders correctly', () => {
+  const tree = renderer.create(
+    &lt;SignUpPage /&gt;
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+</code></pre>
+                    </div>
+                    <div class="fragment">
+                        ⬇
+                    </div>
+								    <div class="sl-block-content fragment" style="margin-top: -20px; z-index: 12; font-size: 100%;">
+								        <pre class="html">
+                            <code>&lt;!-- signup-page-test.js.snap --&gt;
+&lt;div
+    className="SignUpPage"
+    onClick={[Function]}
+&gt;
+    &lt;input
+        placeholder="Name"
+        ...
+    /&gt;
+    ...
+    &lt;button
+        onClick={[Function]}
+    &gt;
+        Sign up!
+    &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                </div>
 
                 <aside class="notes">
 So that was fixtures. However, the fixture testing that we do currently at KA only verifies that they don't literally throw an error in the render method.
-There are two tools that I've been eying that will take things a step further to ensure that you're not unknowingly breaking things, but that also don't look like they will add too much friction to the development process.
+Jest snapshot tests are a way to up the game, still without requiring you to
+spend all your time maintaining tests.
 
-These are Jest Snapshot tests &amp; Visual regression tests.
-
-Jest snapshot tests store a JSON representation of the HTML output of your components -- so not the higher-level components, just the div, span, etc that end up being rendered to the page.
+Jest snapshot tests store the HTML output of your components -- so not the higher-level components, just the div, span, etc that end up being rendered to the page.
 Later, after making a change, you can regenerate this "snapshot" and compare it to the previous one. That way, you can see the impact that your changes had on the component at a DOM level, to make sure that your expectations for the change line up with reality.
 I think there's definitely work to be done to make this a seamless process though; there are plenty of ways to set this up such that it is a pain.
 But the key thing is -- you don't write the expected output by hand. The tools do that for you, notify you of any differences, and ask if you want to overwrite the current snapshot, or if you want to fix your code.
+
+Visual regression tests can function in much the same way. You fire up a browser with your rendered component, take a screenshot, and compare that to the screenshot you have stored on file. An added bonus to this is that you now have a record of what all of your components look like, so that a new developer coming in can get a much better idea of what things look like &amp; how they work.
+
+<!--
+At KA we have a suite of end to end tests that we run on deploy, and they take ~20 minutes, and can be super helpful in catching various bugs. They pay attention to `console.error`, so React's various warnings show up there, which is great.
+-->
+								</aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="bddbf9c46867b3b4f42578277f6e79cb">
+                    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+                        <h2>Jest snapshot tests 🛠</h2>
+                    </div>
+                </div>
+
+								<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 100px;">
+                    <ul>
+                        <li>implement a feature</li>
+                        <li>run jest before submitting for review</li>
+                    </ul>
+								    <div class="sl-block-content fragment" style="z-index: 12; font-size: 100%;">
+								        <pre class="diff">
+								            <code>- expected
++ actual
+  &lt;div
+      className="SignUpPage"
+      onClick={[Function]}
+  &gt;
++     &lt;div&gt;
++       My new feature thing
++       ...
++     &lt;/div&gt;
+      &lt;input
+          placeholder="Name"
+          ...
+      /&gt;
+      ...
+-     &lt;button
+-         onClick={[Function]}
+-     &gt;
+-         Sign up!
+-     &lt;/button&gt;
+  &lt;/div&gt;
+</code></pre>
+<p class="fragment" style="position: absolute; top: 150px; left: 310px; color: red">⬅ yup, we added this</p>
+<p class="fragment" style="position: absolute; top: 300px; left: 310px; color: red">⬅ oops!</p>
+                    </div>
+        </div>
+
+                <aside class="notes">
+                </aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="bddbf9c46867b3b4f42578277f6e79cb">
+                    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+                        <h2>Jest snapshot tests 🛠</h2>
+                    </div>
+                </div>
+
+								<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 100px;">
+                    <ul>
+                        <li>implement a feature</li>
+                        <li>run jest before submitting for review</li>
+                        <li>commit new snapshot file</li>
+                    </ul>
+                </div>
+                <aside class="notes">
+                </aside>
+                <div class="sl-block twitter" data-block-type="text">@jaredforsyth</div>
+            </section>
+
+
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="bddbf9c46867b3b4f42578277f6e79cb">
+                    <div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+                        <h2>Visual regression tests 🛠</h2>
+                    </div>
+                </div>
+
+								<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; left: 160px; top: 100px;">
+                    <ul style="line-height: 2">
+                        <li>compare images instead of HTML</li>
+                        <li>😀 catch css bugs!</li>
+                        <li>😟 much more finnicky</li>
+                    </ul>
+                </div>
+                <aside class="notes">
 
 Visual regression tests can function in much the same way. You fire up a browser with your rendered component, take a screenshot, and compare that to the screenshot you have stored on file. An added bonus to this is that you now have a record of what all of your components look like, so that a new developer coming in can get a much better idea of what things look like &amp; how they work.
 
