@@ -158,7 +158,6 @@ class App extends Component {
     this.setState({tick: true})
   }
   render() {
-    const Route = routes[window.location.search.slice(1)]
     return (
       <div className="App">
         <div className="App-header">
@@ -178,7 +177,6 @@ class App extends Component {
         />
         <br/>
         <br/>
-        {this.state.tick && <Route />}
         <br/>
         <br/>
         <input
@@ -188,15 +186,6 @@ class App extends Component {
         />
         <br/>
         <br/>
-        {Route && <pre style={{textAlign: 'left', width: 500, alignSelf: 'center', margin: '0 auto'}}>
-          {sources[window.location.search.slice(1)]}
-          </pre>}
-        <br/>
-        <Parent numFriends="none"/>
-        {[1,2,3].map(x => <span />)}
-        <Nothing
-          name={10}
-        />
       </div>
     );
   }
